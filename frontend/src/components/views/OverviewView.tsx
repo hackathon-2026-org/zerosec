@@ -87,7 +87,7 @@ export const OverviewView: React.FC = () => {
             <Layers className="w-4 h-4 text-slate-400" />
           </div>
           <p className="text-xl font-bold text-slate-900 tracking-tight">{totalCampaigns}</p>
-          <p className="text-[11px] text-slate-500 mt-0.5">Active Monitored</p>
+          <p className="text-[11px] text-slate-500 mt-0.5">Active</p>
         </div>
 
         {/* Total Spend */}
@@ -106,12 +106,12 @@ export const OverviewView: React.FC = () => {
         {/* Actionable Incidents */}
         <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
           <div className="flex items-center justify-between text-slate-500 mb-1.5">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Actionable Incidents</span>
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Incidents</span>
             <AlertTriangle className="w-4 h-4 text-rose-500" />
           </div>
           <p className="text-xl font-bold text-rose-600 tracking-tight">{actionableAlertsCount}</p>
           <p className="text-[11px] text-slate-500 mt-0.5 font-medium">
-            {criticalCount} Critical • {highCount} High
+            {criticalCount} Crit • {highCount} High
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export const OverviewView: React.FC = () => {
           <p className="text-xl font-bold text-indigo-600 tracking-tight">
             {metrics.hasGroundTruth && metrics.precision !== null ? `${metrics.precision}%` : 'N/A'}
           </p>
-          <p className="text-[11px] text-slate-500 mt-0.5">True Signal Rate</p>
+          <p className="text-[11px] text-slate-500 mt-0.5">Ground Truth</p>
         </div>
 
         {/* Recall */}
@@ -136,19 +136,19 @@ export const OverviewView: React.FC = () => {
           <p className="text-xl font-bold text-emerald-600 tracking-tight">
             {metrics.hasGroundTruth && metrics.recall !== null ? `${metrics.recall}%` : 'N/A'}
           </p>
-          <p className="text-[11px] text-slate-500 mt-0.5">Catch Rate (0 Missed)</p>
+          <p className="text-[11px] text-slate-500 mt-0.5">0 Missed</p>
         </div>
 
         {/* Noise Suppression */}
         <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm">
           <div className="flex items-center justify-between text-slate-500 mb-1.5">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Noise Suppressed</span>
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">Noise Shield</span>
             <ShieldCheck className="w-4 h-4 text-purple-500" />
           </div>
           <p className="text-xl font-bold text-purple-600 tracking-tight">
-            {backendSummary?.suppressed_alerts ? `${backendSummary.suppressed_alerts} Held` : '95 Held'}
+            {backendSummary?.suppressed_alerts ? `${backendSummary.suppressed_alerts}` : '95'}
           </p>
-          <p className="text-[11px] text-slate-500 mt-0.5">Cooldown Shield</p>
+          <p className="text-[11px] text-slate-500 mt-0.5">Noise Filtered</p>
         </div>
       </div>
 
