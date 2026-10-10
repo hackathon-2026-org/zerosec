@@ -103,9 +103,9 @@ export const AnomalyAnalysisView: React.FC = () => {
       {/* Top Campaign Selector Header */}
       <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-card flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-xl font-bold text-slate-900 tracking-tight">Per-Campaign Anomaly Deep Dive</h2>
+          <h2 className="text-base font-bold text-slate-900 tracking-tight">Anomaly Bands</h2>
           <p className="text-xs text-slate-500 mt-0.5">
-            Inspect historical trends against rolling baselines ($\mu \pm 2\sigma$) and multi-metric acceptable variation bands
+            Historical metric trends compared against rolling median baselines and variation bands
           </p>
         </div>
 
